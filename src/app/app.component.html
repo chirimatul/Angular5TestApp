@@ -1,4 +1,12 @@
-<div class="mydiv">
+<div style="width:200px; float:left">
+  <app-players (onPlayerSelected)="onPlayerSelected($event)"></app-players>
+</div>
+
+<div style=" float:left">
+  <app-player [selectedPlayer]="selectedPlayer"></app-player>
+</div>
+
+<!-- <div class="mydiv">
   <h1>
     Welcome to {{ title }}!
   </h1>
@@ -6,4 +14,16 @@
 </div>
 <input type="text" [(ngModel)]="userName" >
 
-<button (click)="validateMe()">click me</button>
+<button (click)="validateMe()">click me</button> -->
+<!-- 
+<app-html-controls></app-html-controls> -->
+
+
+<!-- <div>
+  from service {{serviceUserName}}
+</div> -->
+<!-- <div class="container">
+  <div class="row">
+    <app-user></app-user>
+  </div>
+</div> -->

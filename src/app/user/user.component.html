@@ -1,0 +1,58 @@
+<app-userchild>
+
+</app-userchild>
+<app-userchild>
+
+</app-userchild>
+<app-userchild>
+
+</app-userchild>
+<button (click)='queryChild()'>click me</button>
+
+<div class="container">
+  <div class="row">
+    <label>user name</label>
+    <input type="text" [(ngModel)]="user.userName">
+  </div>
+
+  <div class="row">
+    <label>Gender</label>
+    <input type="radio" id='gender' [value]="true" [(ngModel)]="user.gender"> male
+    <input type="radio" id='gender' [value]="false" [(ngModel)]="user.gender"> female
+  </div>
+
+  <div class="row">
+    <select>
+      <option value="India">India</option>
+      <option value="US">Us</option>
+      <option value="UK">UK</option>
+    </select>
+
+    <select [(ngModel)]="user.country" >
+      <option [value]="country" *ngFor="let country of contries">{{country}}</option>
+    </select>
+    <label>{{user.country}}</label>
+
+  </div>
+  <div class="row">
+    <!-- <label *ngFor="let skill of skills">
+      <input type="checkbox" [(ngModel)]='user.'> {{skill}}
+    </label> -->
+
+    <label>
+      <input type="checkbox" [(ngModel)]='user.isSwimmer'> {{skills[0]}}</label>
+    <label>
+      <input type="checkbox" [(ngModel)]='user.isSinger'> {{skills[1]}}</label>
+    <label>
+      <input type="checkbox" [(ngModel)]='user.Cancycle'> {{skills[2]}}</label>
+  </div>  
+
+  <div class="row">
+    Favourite color
+    <input type="color" [(ngModel)]="user.favouriteColor">
+  </div>
+
+</div>  
+<div>
+  {{user|json}}
+</div>

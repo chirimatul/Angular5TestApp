@@ -1,0 +1,90 @@
+child component
+<hr>
+<select >
+  <option value="country">India</option>
+  <option value="country">US</option>
+  <option value="country">UK</option>
+  <option value="country">Canada</option>
+  <option value="country">France</option>
+</select>
+
+<br>
+<br>
+<select [(ngModel)]="selectedCountry">
+  <option [value]="country" *ngFor="let country of countries">{{country}}</option>
+</select>
+
+
+<label>{{selectedCountry}}</label>
+<br>
+<div [ngSwitch]="selectedCountry">
+  <div *ngSwitchCase="'india'">I am from India</div>
+  <div *ngSwitchCase="'US'">I am from US</div>
+  <div *ngSwitchCase="'UK'">I am from UK</div>
+  <div *ngSwitchCase="'Canada'">I am from canada</div>
+  <!-- d -->
+  <div *ngSwitchDefault>I am from space</div>
+</div>
+
+
+  
+<hr>
+From html
+<input type="radio" name="gender" value="male" checked >Male
+<input type="radio" name="gender" value="female" >Female
+<br>
+From angular
+
+
+<div [ngClass]="userGender == 'male'?'maleClass':'femaleClass'">
+  <input type="radio" name="genderA" value="male" [(ngModel)]="userGender" >Male
+  <input type="radio" name="genderA" value="female" [(ngModel)]="userGender">Female
+  </div>
+<br>
+<label>{{userGender}}</label>
+<hr>
+Html checkbox
+<input type="checkbox" value="Role 1" checked> Role 1
+<input type="checkbox" value="Role 2"> Role 2
+
+<br>
+Angular checkbox
+<input type="checkbox" [(ngModel)]="userRole1" > Role 1
+<input type="checkbox" [(ngModel)]="userRole2"> Role 2
+
+<hr>
+Html date picker
+<input id="date" type="date">
+
+<br>
+Angular date picker
+<input id="date" type="date" [(ngModel)]="bdate">
+selected date is {{bdate}}
+
+<br>
+from html
+<input type="color" value="#ff0000">
+
+<br>
+From angular 
+<input type="color" [(ngModel)]="bkColor">
+
+selected color {{bkColor}}
+<br>
+<div style="height:50px; width:50px" [style.background-color]="bkColor" >
+
+</div>
+
+<hr>
+From html
+<ul>
+  <li>first item</li>
+  <li>second item</li>
+  <li>third item</li>
+</ul>
+<br>
+From angular
+<ul>
+  <li  *ngFor="let item of countries">{{item}}</li>
+</ul>
+<hr>
