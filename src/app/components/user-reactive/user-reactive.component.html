@@ -1,0 +1,40 @@
+<form [formGroup]="userGroup" (submit)="saveUser()">
+  <input type="text" formControlName="fName">
+  <div [hidden]="userGroup.controls.fName.valid">
+    <div [hidden]="userGroup.controls.fName.errors &&
+    !userGroup.controls.fName.errors.required">
+      fname is required
+    </div>
+    <div [hidden]="userGroup.controls.fName.errors &&
+    !userGroup.controls.fName.errors.minlength">
+      min length should be 10
+    </div>
+  </div>
+  <input type="text" formControlName="lName">
+
+  <!-- <div formArrayName="address">
+
+    <div *ngFor="let add of address.controls; let i=index;" [formGroupName]="i">
+
+      <input type="text" formControlName="add.addressLine1">
+      <input type="text" formControlName="add.addressLine2">
+
+    </div>
+
+  </div> -->
+
+
+  <div formArrayName="address">
+      <div *ngFor="let add of address.controls; let i=index" 
+        [formGroupName]="i" >
+        <input type="text" formControlName="add1" >
+        <input type="text" formControlName="add2">
+        <br>
+      </div>  	
+      </div>
+
+      
+  <input type="submit" value="save" [disabled]="userGroup.invalid">
+</form>
+
+{{userGroup.value|json}}

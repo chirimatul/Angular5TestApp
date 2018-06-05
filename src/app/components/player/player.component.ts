@@ -16,4 +16,9 @@ export class PlayerComponent implements OnInit {
   ngOnInit() {
   }
 
+  setLog(){
+    debugger
+    alert('I am log');
+  }
+
 }

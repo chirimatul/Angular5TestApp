@@ -1,0 +1,19 @@
+<div style="height:400px; width:400px;padding-left:200px;">
+  <!-- <div class="row">
+      animation-world works!
+    </div>
+-->
+    <div class="row" style="height:50px; width:50px; cursor:pointer; background-color:green"
+     [@btnAnimate]="state" (mouseenter)="onmouseEnter()"
+      (mouseleave)="onmouseLeave()" [@flyInOut]="'x'">
+    </div> 
+
+    <input type="button" value="Toggle animation" (click)="onmouseEnter()">
+
+  <!-- <div style="height:50px; width:50px; cursor:pointer; background-color:green" [@flyInOut]="'in'"
+  
+  (@flyInOut.start)="animationStart($event)"
+  (@flyInOut.done)="animationDone($event)" >
+  </div> -->
+  
+</div>

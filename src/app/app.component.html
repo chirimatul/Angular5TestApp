@@ -1,10 +1,136 @@
-<div style="width:200px; float:left">
-  <app-players (onPlayerSelected)="onPlayerSelected($event)"></app-players>
+<!-- <app-player 
+[selectedPlayer]="null">
+</app-player>
+
+<app-player 
+[selectedPlayer]="null">
+</app-player>
+
+<app-player 
+[selectedPlayer]="null">
+</app-player>
+
+<input type="button"
+ (click)="onclick()" 
+ value="call from child"> -->
+
+<!-- <div *ngdFor="let p of playerList; 
+let i=index; let odd=odd;let even=even; 
+trackBy: trackById">
+
+<div [class.oddcss]="odd" 
+[class.evencss]="even">({{i}}) 
+{{p.fName}}</div>
+
 </div>
 
-<div style=" float:left">
-  <app-player [selectedPlayer]="selectedPlayer"></app-player>
+<ng-template>
+  I am template
+</ng-template>
+
+<ng-container>
+this is from container
+</ng-container> -->
+
+
+<!-- <input type="text" [(ngModel)]=userRole>
+
+<div [ngSwitch]="userRole">
+  <div *ngSwitchCase="'admin'">
+    I am admin
+  </div>
+  <div *ngSwitchCase="'admin'">
+    I am normal user
+  </div>
+  <div *ngSwitchDefault>
+    I am default user
+  </div>
+</div> -->
+
+<!-- <input type="checkbox" [(ngModel)]="isAdmin"> is Admin
+
+<div *appCustomIf='isAdmin'>
+  I am admin
 </div>
+
+<br>
+<div [hidden]='!isAdmin'>
+  I am admin from hidden
+</div> -->
+
+
+
+
+<!-- <input type="checkbox" [(ngModel)]=showDiv> show  -->
+<!-- <div *appAppIf>
+this is div
+</div> -->
+<!-- <app-player-form></app-player-form> -->
+<!-- <div style="height:50px; width:50px"
+ [appCustom]="'pink'" [mouseEnterColor]="'red'">
+thiehite
+</div> -->
+
+<!-- <br>
+<p style="height:50px; width:50px" appCustom>
+  thiehite
+</p> -->
+
+<!-- <div *ngFor="let p of (playerList | custom )">
+{{p.fName}}
+</div> -->
+<!-- <ng-container>
+  this is container
+</ng-container>
+<br>
+<ng-template>
+  this is template
+</ng-template>
+
+<div *ngFor="let u of (users | isAdmin)">
+
+</div> -->
+
+
+<!-- <input type="text" [(ngModel)]="testv">
+<app-test-c [userAge]="testv"></app-test-c> -->
+<!-- <img [src]="userImg">
+
+<input type="text" #txtAge value="sdf">
+
+<input type="button" (click)="execute(txtAge.value)">
+
+<div style="height:50px; width:50px" [style.backgroundColor]="color">
+
+</div>
+
+
+<input type="color" [(ngModel)]="color"> -->
+
+
+
+<!-- <input type="text" [(ngModel)]="amazing">
+<input type="button" value="clickme" (click)="removeChild()">
+child controller
+<app-test-c [userAge]=amazing *ngIf="removeC"></app-test-c>
+<div style="height:50px; width:50px" appUserCustom>
+
+</div> -->
+
+<!-- 
+
+<input type="button" value="clickme" (click)="btnClickMe()"> -->
+<!-- <div style="height:60px; width:500px;" [appUserDiv]="color" [mouseEnterColor]="black">
+    this div is handled by appUserDiv directive
+  </div>
+
+  <div style="width:200px; float:left">
+    <app-players (onPlayerSelected)="onPlayerSelected($event)"></app-players>
+  </div>
+
+  <div style=" float:left">
+    <app-player [selectedPlayer]="selectedPlayer"></app-player>
+  </div> -->
 
 <!-- <div class="mydiv">
   <h1>
@@ -27,3 +153,10 @@
     <app-user></app-user>
   </div>
 </div> -->
+<!-- 
+<app-reactive-example></app-reactive-example> -->
+<!-- <app-animation-world></app-animation-world> -->
+
+<!-- <app-template-user></app-template-user> -->
+
+<app-user-reactive></app-user-reactive>

@@ -1,0 +1,29 @@
+<form #userForm="ngForm" (submit)="saveUser()">
+
+  <input type="text" name="fName" [(ngModel)]="user.fName" #fName1='ngModel' minlength="10" required>
+
+  <div [hidden]="fName1.valid">
+
+
+    <div [hidden]="fName1.errors && !fName1.errors.minlength">
+      User name length should be at least 10
+    </div>
+    <div [hidden]="fName1.errors && !fName1.errors.required">
+      user name is required
+    </div>
+
+
+
+  </div>
+
+  <br>
+  <!-- {{bond.className}} -->
+  <!-- <br>
+  <input type="text" name="lName" 
+  [(ngModel)]="user.lName">
+  <br> -->
+  <input type="submit" value="Save user" [disabled]="userForm.invalid">
+  <br>
+</form>
+
+{{fName1.errors|json}}

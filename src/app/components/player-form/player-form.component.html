@@ -1,0 +1,13 @@
+<form #playerForm="ngForm" (ngSubmit)="addPlayer()">
+
+  <input type="text" [(ngModel)]="player.fName" #fName="ngModel" required name="abc">
+  
+  <div style="color:red" [hidden]="fName.valid || fName.pristine">
+    first name is required
+  </div>
+
+  <input type="submit" value="save user" [disabled]="!playerForm.form.valid" >
+
+</form>
+
+{{playerForm.form|json}}
