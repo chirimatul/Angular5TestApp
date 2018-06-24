@@ -1,4 +1,5 @@
-<form [formGroup]="userGroup" (submit)="saveUser()">
+<form [formGroup]="userGroup" 
+(submit)="saveUser()">
   <input type="text" formControlName="fName">
   <div [hidden]="userGroup.controls.fName.valid">
     <div [hidden]="userGroup.controls.fName.errors &&
@@ -25,15 +26,15 @@
 
 
   <div formArrayName="address">
-      <div *ngFor="let add of address.controls; let i=index" 
-        [formGroupName]="i" >
-        <input type="text" formControlName="add1" >
-        <input type="text" formControlName="add2">
-        <br>
-      </div>  	
-      </div>
+    <div *ngFor="let add of address.controls; 
+    let i=index" [formGroupName]="i">
+      <input type="text" formControlName="add1">
+      <input type="text" formControlName="add2">
+      <br>
+    </div>
+  </div>
 
-      
+
   <input type="submit" value="save" [disabled]="userGroup.invalid">
 </form>
 

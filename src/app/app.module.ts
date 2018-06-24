@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 
 import { AppComponent } from './app.component';
@@ -24,6 +25,14 @@ import { ReactiveExampleComponent } from './components/reactive-example/reactive
 import { AnimationWorldComponent } from './components/animation-world/animation-world.component';
 import { TemplateUserComponent } from './components/template-user/template-user.component';
 import { UserReactiveComponent } from './components/user-reactive/user-reactive.component';
+import { ObsComponent } from './components/obs/obs.component';
+import { ServiceComponent } from './service/service.component';
+import { ObsStudyComponent } from './components/obs-study/obs-study.component';
+import { LogginInterceptorService } from './services/loggin-interceptor.service';
+
+export const httpInterceptorProviders = [
+  { provide: HTTP_INTERCEPTORS, useClass: LogginInterceptorService, multi: true },
+];
 
 
 @NgModule({
@@ -45,15 +54,19 @@ import { UserReactiveComponent } from './components/user-reactive/user-reactive.
     // ReactiveExampleComponent,
     // AnimationWorldComponent,
     TemplateUserComponent,
-    UserReactiveComponent
+    UserReactiveComponent,
+    //ObsComponent,
+    ServiceComponent,
+    ObsStudyComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
