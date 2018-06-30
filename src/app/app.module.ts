@@ -31,7 +31,8 @@ import { ObsStudyComponent } from './components/obs-study/obs-study.component';
 import { LogginInterceptorService } from './services/loggin-interceptor.service';
 
 export const httpInterceptorProviders = [
-  { provide: HTTP_INTERCEPTORS, useClass: LogginInterceptorService, multi: true },
+  { provide: HTTP_INTERCEPTORS, useClass: 
+    LogginInterceptorService, multi: true },
 ];
 
 
@@ -52,7 +53,7 @@ export const httpInterceptorProviders = [
     AppIfDirective,
     CustomIfDirective,
     // ReactiveExampleComponent,
-    // AnimationWorldComponent,
+    AnimationWorldComponent,
     TemplateUserComponent,
     UserReactiveComponent,
     //ObsComponent,
